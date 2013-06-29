@@ -2,21 +2,21 @@
 -- version 3.2.3
 -- http://www.phpmyadmin.net
 --
--- 호스트: localhost
--- 처리한 시간: 13-06-29 17:28 
--- 서버 버전: 5.1.41
--- PHP 버전: 5.2.12
+-- host: localhost
+-- task time: 13-06-29 17:28 
+-- server version: 5.1.41
+-- PHP version: 5.2.12
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 --
--- 데이터베이스: `cms`
+-- database name: `cms`
 --
 
 -- --------------------------------------------------------
 
 --
--- 테이블 구조 `articles`
+-- table structure `articles`
 --
 
 CREATE TABLE IF NOT EXISTS `articles` (
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
--- 테이블의 덤프 데이터 `articles`
+-- table dump data `articles`
 --
 
 INSERT INTO `articles` (`article_id`, `article_title`, `article_content`, `article_timestamp`) VALUES
@@ -39,7 +39,7 @@ INSERT INTO `articles` (`article_id`, `article_title`, `article_content`, `artic
 -- --------------------------------------------------------
 
 --
--- 테이블 구조 `users`
+-- table structure `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- 테이블의 덤프 데이터 `users`
+-- table dump data `users`
 --
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_password`) VALUES
