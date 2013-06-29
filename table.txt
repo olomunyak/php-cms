@@ -1,0 +1,57 @@
+-- phpMyAdmin SQL Dump
+-- version 3.2.3
+-- http://www.phpmyadmin.net
+--
+-- 호스트: localhost
+-- 처리한 시간: 13-06-29 17:28 
+-- 서버 버전: 5.1.41
+-- PHP 버전: 5.2.12
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- 데이터베이스: `cms`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 테이블 구조 `articles`
+--
+
+CREATE TABLE IF NOT EXISTS `articles` (
+  `article_id` int(11) NOT NULL AUTO_INCREMENT,
+  `article_title` varchar(255) NOT NULL,
+  `article_content` text NOT NULL,
+  `article_timestamp` int(11) NOT NULL,
+  PRIMARY KEY (`article_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- 테이블의 덤프 데이터 `articles`
+--
+
+INSERT INTO `articles` (`article_id`, `article_title`, `article_content`, `article_timestamp`) VALUES
+(1, 'healing mind', 'Nulla ultricies commodo ipsum, sit amet vulputate felis lobortis sit amet. Nunc lobortis urna eu nunc egestas, quis vulputate purus vulputate. In porttitor sed dui in euismod. Maecenas vitae congue eros, a accumsan lorem. Maecenas risus ligula, pulvinar ac placerat et, egestas sed ante. Nam feugiat malesuada ornare.Nulla ultricies commodo ipsum, sit amet vulputate felis lobortis sit amet. Nunc lobortis urna eu nunc egestas, quis vulputate purus vulputate. In porttitor sed dui in euismod. Maecenas vitae congue eros, a accumsan lorem. Maecenas risus ligula, pulvinar ac placerat et, egestas sed ante. Nam feugiat malesuada ornare.', 1371542762),
+(2, 'This is My Article', 'Testing, testing.. 123', 1372321855),
+(6, 'hi add article', 'this one added just now...!!\r\nnice to meet you', 1372323732);
+
+-- --------------------------------------------------------
+
+--
+-- 테이블 구조 `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(255) NOT NULL,
+  `user_password` varchar(255) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- 테이블의 덤프 데이터 `users`
+--
+
+INSERT INTO `users` (`user_id`, `user_name`, `user_password`) VALUES
+(1, 'admin', '5f4dcc3b5aa765d61d8327deb882cf99');
