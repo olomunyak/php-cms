@@ -27,7 +27,14 @@ class Article {
 		$query->bindValue(1, $title);
 		$query->bindValue(2, $content);
 		$query->bindValue(3, time());
+		$query->execute();
+	}
 
+	public function delete_data($article_id) {
+		global $pdo;
+
+		$query = $pdo->prepare('DELETE FROM articles WHERE article_id = ?');
+		$query->bindValue(1, $article_id);
 		$query->execute();
 	}
 }

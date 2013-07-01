@@ -11,10 +11,7 @@ if (isset($_SESSION['logged_in'])) {
 	if (isset($_GET['id'])) {
 		$id = $_GET['id'];
 
-		$query = $pdo->prepare('DELETE FROM articles WHERE article_id = ?');
-		$query->bindValue(1, $id);
-
-		$query->execute();
+		$article->delete_data($id);
 
 		header('Location: delete.php');
 	}
