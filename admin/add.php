@@ -3,6 +3,9 @@
 session_start();
 
 include_once('../includes/connection.php');
+include_once('../includes/article.php');
+
+$article = new Article;
 
 if (isset($_SESSION['logged_in'])) {
 	if(isset($_POST['title'], $_POST['content'])) {
@@ -12,13 +15,8 @@ if (isset($_SESSION['logged_in'])) {
 		if (empty($title) or empty($content)) {
 			$error = 'All fields are required!';
 		} else {
-			$query = $pdo->prepare('INSERT INTO articles (article_title, article_content, article_timestamp) VALUES (?, ?, ?)');
 
-			$query->bindValue(1, $title);
-			$query->bindValue(2, $content);
-			$query->bindValue(3, time());
-
-			$query->execute();
+			$article->add_data($title, $content);
 
 			header('Location: index.php');
 		}

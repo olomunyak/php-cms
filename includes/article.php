@@ -19,6 +19,17 @@ class Article {
 
 		return $query->fetch();
 	}
+
+	public function add_data($title, $content) {
+		global $pdo;
+
+		$query = $pdo->prepare('INSERT INTO articles (article_title, article_content, article_timestamp) VALUES (?, ?, ?)');
+		$query->bindValue(1, $title);
+		$query->bindValue(2, $content);
+		$query->bindValue(3, time());
+
+		$query->execute();
+	}
 }
 
 ?>
